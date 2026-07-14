@@ -1,1 +1,0 @@
-export const firebaseConfig={apiKey:"AIzaSyBpXOmV1F2iXAd11Iw5JaBw5LqUUtJ-Dus",authDomain:"budgetpro-99c12.firebaseapp.com",projectId:"budgetpro-99c12",storageBucket:"budgetpro-99c12.firebasestorage.app"};
