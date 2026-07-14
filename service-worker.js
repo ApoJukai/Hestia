@@ -1,16 +1,11 @@
-const CACHE = "hestia-v13-2";
-const ASSETS = [
-  "./",
-  "./index.html",
-  "./firebase-app.js?v=13.2",
-  "./firebase-config.js",
-  "./manifest.webmanifest",
-  "./icon.svg"
-];
+const CACHE = "hestia-v14";
+const ASSETS = ["./", "./index.html", "./firebase-app.js?v=14", "./firebase-config.js", "./manifest.webmanifest", "./icon.svg"];
+
 self.addEventListener("install", event => {
   self.skipWaiting();
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)));
 });
+
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys()
@@ -18,6 +13,7 @@ self.addEventListener("activate", event => {
       .then(() => self.clients.claim())
   );
 });
+
 self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
   event.respondWith(
